@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 200px;
+    height: 200px;
+    border-radius:100px;
+    /* background-color: gray; */
+    background-image: url("img/shyCam.png");
+    filter: drop-shadow(10px 10px 10px #66666688);
+    border-width: 0px;
+    transition-duration: 0.2s;
+}
+
+
+button:hover {
+    background-image: url("img/happyCam.png");
+    filter: drop-shadow(3px 3px 5px #444444cc);
+    transition-duration: 0.2s;
+    border-width: 0px;
+    
+}
+a svg {
+	position: absolute;
+	z-index: 3;
+	width: calc(var(--font-size) * 0.1);
+	aspect-ratio: 1;
+}
+
+a svg path {
+	fill: var(--glare);
+}
+
+/* Animation for sparkles */
+
+button:hover svg {
+	animation: sparkle 0.75s calc((var(--delay-step) * 1s)) both;
+}
+
+
+@keyframes sparkle {
+	50% {
+        transform: scale(var(--s), 0.9) translate(-50%, -50%);
+	}
+}
+
+button svg {
+	--delay-step: 0.15;
+	top: calc(var(--y, 50) * 1%);
+	left:  calc(var(--x, 0) * 1%);
+	transform: translate(-50%, -50%) scale(0);
+    color: #fff0c9;
+}
+
+button svg:nth-of-type(1) {
+	--x: 0;
+	--y: 20;
+	--s: 1.1;
+	--d: 1;
+}
+
+button svg:nth-of-type(2) {
+	--x: 15;
+	--y: 80;
+	--s: 1.25;
+	--d: 2;
+    animation-delay: 0.2;
+}
+
+button svg:nth-of-type(3) {
+	--x: 45;
+	--y: 40;
+	--s: 1.1;
+	--d: 3;
+    animation-delay: 0.1;
+}
+
+button svg:nth-of-type(4) {
+	--x: 75;
+	--y: 60;
+	--s: 0.9;
+	--d: 2;
+    animation-delay: 0.27;
+}
+
+button svg:nth-of-type(5) {
+	--x: 100;
+	--y: 30;
+	--s: 0.8;
+	--d: 4;
+    animation-delay: 0.17;
+}
+
+#button-img {
+    background-image: url("img/shyCam.png");
+}
+
+#button-img:hover { 
+    background-image: url("img/happyCam.png");
+}
